@@ -1,0 +1,31 @@
+# PySpark - Apply custom schema to a DataFrame by changing names
+
+# Import the libraries SparkSession, StructType,
+# StructField, StringType, IntegerType
+from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+
+# Create a spark session using getOrCreate() function
+spark_session = SparkSession.builder.getOrCreate()
+
+# Define the structure for the data frame
+schema = StructType([
+    StructField('Student_Name',
+                StringType(), True),
+    StructField('Student_Age',
+                IntegerType(), True),
+    StructField('Student_Subject',
+                StringType(), True),
+    StructField('Student_Class',
+                IntegerType(), True),
+    StructField('Student_Fees',
+                IntegerType(), True)
+])
+
+# Applying custom schema to data frame
+df = spark_session.read.format(
+    "csv").schema(schema).option(
+    "header", True).load("/content/student_data.csv")
+
+# Display the updated schema
+df.printSchema()
