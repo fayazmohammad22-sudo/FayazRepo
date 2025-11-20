@@ -1,0 +1,6 @@
+Prepare the SQL database
+Allow Azure services to access the logical SQL Server of your Azure SQL Database.
+Verify that the setting Allow Azure services and resources to access this server is enabled for your server that's running SQL Database. 
+This setting lets Data Factory write data to your database instance. 
+To verify and turn on this setting, go to logical SQL server > Security > Firewalls and virtual networks > 
+set the Allow Azure services and resources to access this server option to ON.
