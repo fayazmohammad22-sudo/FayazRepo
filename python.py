@@ -1,18 +1,21 @@
-# Solve the quadratic equation ax**2 + bx + c = 0
+# Python program to check if year is a leap year or not
 
-# import complex math module
-import cmath
+year = 2000
 
-a = 1
-b = 5
-c = 6
+# To get year (integer input) from the user
+# year = int(input("Enter a year: "))
 
-# calculate the discriminant
-d = (b**2) - (4*a*c)
+# divided by 100 means century year (ending with 00)
+# century year divided by 400 is leap year
+if (year % 400 == 0) and (year % 100 == 0):
+    print("{0} is a leap year".format(year))
 
-# find two solutions
-sol1 = (-b-cmath.sqrt(d))/(2*a)
-sol2 = (-b+cmath.sqrt(d))/(2*a)
+# not divided by 100 means not a century year
+# year divided by 4 is a leap year
+elif (year % 4 ==0) and (year % 100 != 0):
+    print("{0} is a leap year".format(year))
 
-print('The solution are {0} and {1}'.format(sol1,sol2))
-
+# if not divided by both 400 (century year) and 4 (not century year)
+# year is not leap year
+else:
+    print("{0} is not a leap year".format(year))
