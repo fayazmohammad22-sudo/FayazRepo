@@ -3,8 +3,8 @@ public class MultiplyMatrices {
     public static void main(String[] args) {
         int r1 = 2, c1 = 3;
         int r2 = 3, c2 = 2;
-        int[][] firstMatrix = { {3, -2, 5}, {3, 0, 4} };
-        int[][] secondMatrix = { {2, 3}, {-9, 0}, {0, 4} };
+        int[][] firstMatrix = { {3, -2, 5}, {3, 0, 5} };
+        int[][] secondMatrix = { {2, 3}, {-9, 0}, {0, 2} };
 
         // Mutliplying Two matrices
         int[][] product = new int[r1][c2];
@@ -26,3 +26,4 @@ public class MultiplyMatrices {
         }
     }
 }
+
