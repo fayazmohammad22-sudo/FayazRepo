@@ -1,32 +1,28 @@
-abstract class TV{
-    
-    abstract void turnOn();
-    abstract void turnOff();
-}
+public class MultiplyMatrices {
 
-// Concrete class implementing the abstract methods
-class TVRemote extends TV{
-    
-    @Override
-    void turnOn(){
-        
-        System.out.println("TV is turned ON.");
-    }
+    public static void main(String[] args) {
+        int r1 = 2, c1 = 3;
+        int r2 = 3, c2 = 2;
+        int[][] firstMatrix = { {3, -2, 5}, {3, 0, 4} };
+        int[][] secondMatrix = { {2, 3}, {-9, 0}, {0, 4} };
 
-    @Override
-    void turnOff(){
-        
-        System.out.println("TV is turned OFF.");
-    }
-}
+        // Mutliplying Two matrices
+        int[][] product = new int[r1][c2];
+        for(int i = 0; i < r1; i++) {
+            for (int j = 0; j < c2; j++) {
+                for (int k = 0; k < c1; k++) {
+                    product[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
+                }
+            }
+        }
 
-// Main class to demonstrate abstraction
-public class Geeks{
-    
-    public static void main(String[] args){
-        
-        TV remote = new TVRemote();
-        remote.turnOn();   
-        remote.turnOff();  
+        // Displaying the result
+        System.out.println("Multiplication of two matrices is: ");
+        for(int[] row : product) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
     }
 }
