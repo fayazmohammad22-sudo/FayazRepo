@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Basic HTML Page</title>
+    <script>
+function clickCounter() {
+  const x = document.getElementById("result");
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    x.innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s)!";
+  } else {
+    x.innerHTML = "Sorry, no Web storage support!";
+  }
+}
+</script>
+
 </head>
 <body>
     <h1>Welcome to My Page</h1>
